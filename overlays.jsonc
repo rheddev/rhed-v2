@@ -1,0 +1,63 @@
+{
+  "name": "Chat",
+  "width": 1920,
+  "height": 1080,
+
+  "widgets": [
+    // chat widget
+    {
+      // This'll be for the container, not the text
+      "position": {
+        // (0,0) is top left
+        "x": 8,
+        "y": 772, // 1080 - (8 + 300)
+        "rotate": 0
+      },
+      "layout": {
+        "width": 100,
+        "height": 300
+      },
+      "appearance": {
+        "opacity": 100,
+        "border-radius": 0
+      },
+      // This mean transparent
+      "fill": [],
+
+      // This mean no effects added
+      "effects": [],
+
+      // This is for the chat itself
+      "chat": {
+        "layout": {
+          "padding": 8
+        },
+        "appearance": {
+          "opacity": 100
+        },
+        "typography": {
+          "font-family": "Roboto",
+          "font-weight": "regular",
+          "font-size": 12,
+          "line-height": "normal",
+          "letter-spacing": "normal",
+          "text-align": "left"
+        },
+        "fill": [{
+          "color": "user",
+          "override-user-color": false // (NOT CSS) 
+        }],
+        "effects": [
+          // drop shadow
+          {
+            "x": 0,
+            "y": -4,
+            "blur": 4,
+            "spread": 0,
+            "color": "#000000ff"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap");
+@import "tailwindcss";
+
+body {
+  @apply m-0 p-0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("/wood_light.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #222222;
+  font-weight: 200;
+}
+
+.subtitle {
+  color: #221111;
+  font-weight: 300;
+}
+
+.title {
+  color: #220000;
+  font-weight: 400;
+}
+
+.playwrite-us-trad {
+  font-family: "Playwrite US Trad", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.glass,
+.glass-hover {
+  @apply bg-white/10 dark:bg-black/25 backdrop-blur-sm;
+}
+
+.glass-strong,
+.glass-strong-hover {
+  @apply bg-white/25 dark:bg-black/50 backdrop-blur-lg;
+}
+
+.glass-hover {
+  @apply hover:bg-white/25 dark:hover:bg-black/50;
+}
+
+.glass-string-hover {
+  @apply hover:bg-white/50 dark:hover:bg-black/75;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: url("/wood_dark.jpg");
+    color: #dddddd;
+  }
+
+  .subtitle {
+    color: #eedddd;
+  }
+
+  .title {
+    color: #ffdddd;
+  }
+}

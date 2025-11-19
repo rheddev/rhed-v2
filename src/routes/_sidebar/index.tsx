@@ -3,6 +3,7 @@ import {
   useSuspenseQuery,
 } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
+import { AlertCircle } from "lucide-react";
 import { Suspense, useState } from "react";
 import { Loading } from "@/components/Loading";
 import { twitchVideosQueryOptions } from "@/lib/twitch";
@@ -47,7 +48,7 @@ function Hero() {
         <div className="flex items-center justify-center">
           <div className="w-full aspect-video rounded-lg overflow-hidden shadow-2xl">
             <iframe
-            title="Live Stream"
+              title="Live Stream"
               src="https://player.twitch.tv/?channel=RhedDev&parent=rhed.rhamzthev.com&parent=localhost"
               className="w-full h-full"
               allowFullScreen
@@ -57,7 +58,7 @@ function Hero() {
       </div>
       {/* Floating Arrow Button */}
       <button
-      type="button"
+        type="button"
         onClick={scrollToStreams}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce p-4 rounded-full glass-hover shadow-md transition-all"
         aria-label="Scroll to streams"
@@ -148,14 +149,26 @@ function SuspenseStreams() {
     useSuspenseQuery(twitchVideosQueryOptions());
   const videos = twitchVideosQuery.data;
 
-  return videos.map((video: Video) => <Stream key={video.id} video={video} />);
+  return videos ? (
+    videos.map((video: Video) => <Stream key={video.id} video={video} />)
+  ) : (
+    <div className="col-span-full flex items-center justify-center p-8">
+      <div className="glass-hover shadow-xl rounded-lg p-8 max-w-md text-center space-y-4">
+        <div className="flex justify-center">
+          <AlertCircle className="w-12 h-12 text-yellow-500" />
+        </div>
+        <h3 className="subtitle text-xl">Configuration Error</h3>
+        <p className="text-sm opacity-80">
+          Please check your environment configuration.
+        </p>
+      </div>
+    </div>
+  );
 }
 
 function Streams() {
   return (
-    <div
-      className="h-full w-full pt-16 pb-32 px-8 md:px-16 lg:px-24"
-    >
+    <div className="h-full w-full pt-16 pb-32 px-8 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <h2 className="title text-4xl md:text-5xl mb-12">Recent Streams</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

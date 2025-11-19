@@ -145,7 +145,8 @@ const fetchVideos: Fetcher<Video[]> = createServerFn().handler(async () => {
   const clientId = process.env.TWITCH_CLIENT_ID;
 
   if (!clientId) {
-    throw new Error("Missing Twitch client ID");
+    console.error("Missing Twitch client ID");
+    return null;
   }
 
   const appAccessToken: AppAccessToken = await fetchAppAccessToken();

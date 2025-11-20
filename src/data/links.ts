@@ -6,5 +6,5 @@ interface Hyperlink {
 export const connectLinks: Hyperlink[] = [
   { text: "Twitch", to: "https://twitch.tv/RhedDev" },
   { text: "GitHub", to: "https://github.com/orgs/rheddev" },
-  { text: "Twitter", to: "https://twitter.com/RhedDev_" },
+  { text: "X", to: "https://x.com/RhedDev_" },
 ];

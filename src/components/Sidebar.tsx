@@ -27,8 +27,8 @@ function SidebarContent() {
     <div className="h-full flex flex-col p-6">
       <div className="flex-1">
         {/* Logo Section */}
-        <Link to="/" className="block mb-8">
-          <h2 className="text-4xl font-bold title hover:scale-105 transition-transform duration-200">
+        <Link to="/" className="block mb-8 transition-all duration-200 hover:translate-x-1">
+          <h2 className="text-4xl font-bold title">
             <span>{"<"}</span>
             <span className="playwrite-us-trad text-[#aa0000] text-shadow-[0_0_0.25rem_#aa0000]">
               Rhed
